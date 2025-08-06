@@ -11,7 +11,7 @@ module.exports = async function(results, request) {
   // Function to update description based on age
   const updateDescription = (hero) => {
     if (hero.age > 500 && !hero.description.startsWith("An Immortal")) {
-      hero.description = `An Immortal ${hero.description}`;
+      hero.description = `An Immortal. ${hero.description}`;
     }
   };
 
