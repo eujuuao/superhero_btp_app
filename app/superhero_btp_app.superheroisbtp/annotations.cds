@@ -1,0 +1,1 @@
+using superhero_btp_appSrv as service from '../../srv/service';
