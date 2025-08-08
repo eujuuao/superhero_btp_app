@@ -13,14 +13,14 @@ entity SuperHeroes : cuid, managed {
 }
 
 @assert.unique: { name: [name] }
-entity Superpowers : cuid {
+entity Superpowers : cuid, managed {
   name: String(100) @mandatory;
   description: String(500);
   superhero: Association to SuperHeroes;
 }
 
 @assert.unique: { name: [name] }
-entity SecretIdentities : cuid {
+entity SecretIdentities : cuid, managed {
   name: String(100) @mandatory;
   description: String(500);
   superhero: Association to SuperHeroes;
