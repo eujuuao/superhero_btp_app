@@ -1,21 +1,21 @@
-const cds = require('@sap/cds');
+const cds = require("@sap/cds");
 
-module.exports = cds.service.impl(function () {
- 
-  this.after('READ', 'superheroes', (results) => {
-
-  // Função para atualizar a descrição
+module.exports = async function (results) {
+  if (!results) return;
+  // Função para atualizar a descrição do herói
   const updateDescription = (hero) => {
+    // Se idade > 500 e descrição não começa com "An Immortal"
     if (hero.age > 500 && !hero.description?.startsWith("An Immortal")) {
-      hero.description = `An Immortal. ${hero.description} || ''}`;
+      // Atualiza descrição, evita undefined com || ''
+      hero.description = `An Immortal. ${hero.description || ""}`;
     }
   };
-  // Se for uma lista de herois
-  if(Array.isArray(results)) {
+
+  // Se resultados forem uma lista, aplica para cada
+  if (Array.isArray(results)) {
     results.forEach(updateDescription);
   } else {
-    // Se for um único heroi
+    // Senão, é um objeto único
     updateDescription(results);
-    }
-  });
-});
+  }
+};
