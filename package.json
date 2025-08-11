@@ -31,7 +31,8 @@
     "start-local": "npm run generate-entry-point && npm run cds-watch",
     "generate-entry-point": "dev-cap-tools gen-entrypoint",
     "cds-watch": "cds watch --open",
-    "watch-superhero_btp_app.superheroisbtp": "cds watch --open superhero_btp_app.superheroisbtp/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-superhero_btp_app.superheroisbtp": "cds watch --open superhero_btp_app.superheroisbtp/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-superheroes_ui": "cds watch --open superheroes_ui/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -51,6 +52,7 @@
   },
   "lcap": true,
   "sapux": [
-    "app/superhero_btp_app.superheroisbtp"
+    "app/superhero_btp_app.superheroisbtp",
+    "app/superheroes_ui"
   ]
 }
