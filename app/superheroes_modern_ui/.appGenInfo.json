@@ -1,0 +1,33 @@
+{
+  "generationParameters": {
+    "generationDate": "Tue Aug 12 2025 16:32:32 GMT-0300 (Brasilia Standard Time)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/service/superhero_btp_app/",
+    "appName": "superheroes_modern_ui",
+    "appTitle": "Super-Heróis (Moderno)",
+    "appDescription": "Uma aplicação Fiori moderna para gerenciar Super-Heróis.",
+    "appNamespace": "com.sap.heroes",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.139.0",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.18.4",
+    "template": "Worklist Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "SuperHeroes"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "None"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/superheroes_modern_ui/webapp/index.html"
+  }
+}

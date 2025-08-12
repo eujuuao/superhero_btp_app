@@ -1,6 +1,6 @@
 namespace superhero_btp_app;
 using { cuid, managed } from '@sap/cds/common';
-using from '../app/superheroes_ui/annotations';
+using from '../app/superheroes_modern_ui/annotations';
 
 @assert.unique: { name: [name] }
 entity SuperHeroes : cuid, managed {
