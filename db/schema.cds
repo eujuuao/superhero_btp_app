@@ -8,6 +8,7 @@ entity SuperHeroes : cuid, managed {
   age: Integer;
   gender: String(10);
   description: String(500);
+  imageUrl: String(512);
   superpowers: Association to many Superpowers on superpowers.superhero = $self;
   secretIdentity: Association to SecretIdentities;
 }
