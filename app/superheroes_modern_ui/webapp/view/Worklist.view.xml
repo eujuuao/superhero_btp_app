@@ -1,7 +1,8 @@
 <mvc:View
     controllerName="com.sap.heroes.controller.Worklist"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="Super-Heróis (Moderno)">
         <content>
             <Table
@@ -9,33 +10,39 @@
                 width="auto"
                 items="{path: '/SuperHeroes'}">
                 
-                <!-- COLUNAS COM IDs ESTÁVEIS -->
                 <columns>
+                    <!-- COLUNAS COM IDs ESTÁVEIS -->
                     <Column id="imageColumn" width="6rem">
-                        <Text id="imageColumnTitle" text="Imagem" />
+                        <header>
+                            <Text id="imageColumnTitle" text="Imagem" />
+                        </header>
                     </Column>
                     <Column id="nameColumn">
-                        <Text id="nameColumnTitle" text="Nome" />
+                        <header>
+                            <Text id="nameColumnTitle" text="Nome" />
+                        </header>
                     </Column>
                     <Column id="aliasColumn">
-                        <Text id="aliasColumnTitle" text="Codinome" />
+                        <header>
+                            <Text id="aliasColumnTitle" text="Codinome" />
+                        </header>
                     </Column>
                 </columns>
 
-                <!-- TEMPLATE DOS ITENS -->
                 <items>
+                    <!-- TEMPLATE DOS ITENS -->
                     <ColumnListItem
                         id="tableItems"
                         type="Navigation"
                         press=".onPress">
                         <cells>
-                            <!-- CÉLULA 1: A IMAGEM -->
-                            <Image
-                                id="heroImage"
-                                src="{imageUrl}"
-                                width="4rem"
-                                height="4rem"
-                                densityAware="false" />
+                            <!-- CÉLULA 1: A IMAGEM (Renderizada com HTML puro) -->
+                            <core:HTML
+                                id="heroImageHtml"
+                                content="{
+                                    path: 'imageUrl',
+                                    formatter: '.formatter.createImageTag'
+                                }" />
 
                             <!-- CÉLULA 2: O NOME -->
                             <ObjectIdentifier id="heroName" title="{name}" />
