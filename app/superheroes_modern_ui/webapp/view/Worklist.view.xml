@@ -8,17 +8,40 @@
                 id="table"
                 width="auto"
                 items="{path: '/SuperHeroes'}">
+                
+                <!-- COLUNAS COM IDs ESTÁVEIS -->
                 <columns>
-                    <Column width="6rem"><Text text="Imagem" /></Column>
-                    <Column><Text text="Nome" /></Column>
-                    <Column><Text text="Codinome" /></Column>
+                    <Column id="imageColumn" width="6rem">
+                        <Text id="imageColumnTitle" text="Imagem" />
+                    </Column>
+                    <Column id="nameColumn">
+                        <Text id="nameColumnTitle" text="Nome" />
+                    </Column>
+                    <Column id="aliasColumn">
+                        <Text id="aliasColumnTitle" text="Codinome" />
+                    </Column>
                 </columns>
+
+                <!-- TEMPLATE DOS ITENS -->
                 <items>
-                    <ColumnListItem type="Navigation" press=".onPress">
+                    <ColumnListItem
+                        id="tableItems"
+                        type="Navigation"
+                        press=".onPress">
                         <cells>
-                            <Image src="{imageUrl}" width="4rem" height="4rem" />
-                            <ObjectIdentifier title="{name}" />
-                            <Text text="{alias}" />
+                            <!-- CÉLULA 1: A IMAGEM -->
+                            <Image
+                                id="heroImage"
+                                src="{imageUrl}"
+                                width="4rem"
+                                height="4rem"
+                                densityAware="false" />
+
+                            <!-- CÉLULA 2: O NOME -->
+                            <ObjectIdentifier id="heroName" title="{name}" />
+
+                            <!-- CÉLULA 3: O CODINOME -->
+                            <Text id="heroAlias" text="{alias}" />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -26,4 +49,3 @@
         </content>
     </Page>
 </mvc:View>
-
