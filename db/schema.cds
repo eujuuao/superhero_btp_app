@@ -1,6 +1,6 @@
 namespace superhero_btp_app;
 using { cuid, managed } from '@sap/cds/common';
-using from '../app/superheroes_modern_ui/annotations';
+using from '../app/superheroes_modern_ui/annotations'; 
 
 @assert.unique: { name: [name] }
 entity SuperHeroes : cuid, managed {
@@ -10,8 +10,9 @@ entity SuperHeroes : cuid, managed {
   gender: String(10);
   description: String(500);
   
-  @Core.MediaType: 'image/jpeg'
-  imageUrl: LargeString;         
+  
+  imageUrl: String(512); // Apenas um campo de texto para a URL.
+  
   superpowers: Association to many Superpowers on superpowers.superhero = $self;
   secretIdentity: Association to SecretIdentities;
 }
